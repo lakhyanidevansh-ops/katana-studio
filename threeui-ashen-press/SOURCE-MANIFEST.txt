@@ -1,0 +1,6 @@
+Exact source files copied to src/shaders paths:
+ashen-press.html  SHA-256 5fe2554e578acac5d55cb466a9564440e7767e38797981f8e829dfd2de0bc90f
+AshenPress.tsx    SHA-256 36b365f7a69223f1c3347bfcb3f2d1aa1ab20d30f2c31e5efb248e62ab4ddc90
+threeui.css       SHA-256 efe4447139f1358dd8e9be68edf6fa46cbefbd1de423a4d6c439ca61d2c8eccf
+
+films.html is the Katana Studios adaptation: the renderer and interactions are retained; the game catalogue and embedded game artwork are replaced with film archive entries and the supplied SHE LIVED poster.
