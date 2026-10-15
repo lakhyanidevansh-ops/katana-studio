@@ -4522,7 +4522,12 @@ function wireNav() {
      one link per section in matching order. With five links over four chapters
      every entry past the third lit for its neighbour: standing in Afterlight
      highlighted Stories. Reading the destination cannot drift. */
-  const linkSec = links.map(l => SECS.indexOf(document.querySelector(l.getAttribute('href'))));
+  const linkSec = links.map(l => {
+    const href = l.getAttribute('href');
+    if (!href || !href.startsWith('#')) return -1;
+    const target = document.querySelector(href);
+    return target ? SECS.indexOf(target) : -1;
+  });
   window.addEventListener('scroll', () => {
     const y = scrollY;
     nav.classList.toggle('stuck', y > 40);
