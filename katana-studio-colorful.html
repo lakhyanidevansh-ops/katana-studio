@@ -4892,7 +4892,13 @@ document.addEventListener('visibilitychange', () => {
 
 /* ======================================================== 14 · booting */
 const JOBS = [
-  ['Reading the type', () => document.fonts && document.fonts.load('600 320px Wordmark')],
+  /* Font readiness is cosmetic; never let a stalled font request hold the
+     entire WebGL scene at 0%. Continue after 1.5s and let the font swap in. */
+  ['Reading the type', () => {
+    if (!document.fonts) return;
+    const fontLoad = document.fonts.load('600 320px Wordmark').catch(() => []);
+    return Promise.race([fontLoad, new Promise(resolve => setTimeout(resolve, 1500))]);
+  }],
   ['Pouring the ground', () => { initGL(); WORLD.uT = { value: 0 }; buildRig(); buildLights(); }],
   ['Cutting the approach', () => buildShell()],
   ['Raising the hall', () => buildTemple()],
