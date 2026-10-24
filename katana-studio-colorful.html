@@ -1171,6 +1171,12 @@ body.katana-guide .nav.hide{transform:translate3d(0,-110%,0)!important}
   .nav.menu-open::before{background:linear-gradient(110deg,rgba(74,45,51,.99),rgba(55,38,44,.99) 58%,rgba(72,44,49,.99))}
 }
 @media(prefers-reduced-motion:reduce){.nav{transition:none!important;will-change:auto}}
+/* Preserve the original center-logo transition while the guide scene is active. */
+body.katana-guide .nav.hide{transform:none!important;transition:none!important}
+body.katana-guide .nav.hide .brand{left:50%!important;top:50%!important;width:clamp(108px,12vw,150px)!important;height:auto!important;transform:translate(-50%,-50%)!important;opacity:.28!important;filter:blur(3.5px)!important;visibility:visible!important;pointer-events:auto!important}
+body.katana-guide .nav.hide .brand-logo{opacity:0!important;visibility:visible!important}
+body.katana-guide .nav.hide .brand-brush{opacity:.9!important;visibility:visible!important}
+body.katana-guide .nav.hide .nav-links,body.katana-guide .nav.hide .nav-burger{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
 </style>
 </head>
 <body data-layout-hero="b" data-layout-story="b" data-layout-gallery="b"
