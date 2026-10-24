@@ -1107,17 +1107,6 @@ body,.nav-link,.nav-burger,.eyebrow,.body,.body-lg,.service-group,.services-more
 .scene-window{position:relative;z-index:2;width:min(1220px,calc(100% - 2 * var(--pad)));height:clamp(110px,19vh,220px);margin:0 auto;overflow:hidden;border:1px solid rgba(255,242,228,.32);border-radius:5px;background:linear-gradient(115deg,rgba(255,241,225,.025),rgba(43,26,28,.04) 50%,rgba(255,241,225,.025));box-shadow:inset 0 1px rgba(255,255,255,.2),0 18px 58px rgba(31,15,18,.12);pointer-events:none}
 .scene-window::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,14,16,.08),transparent 20%,transparent 80%,rgba(18,14,16,.08)),linear-gradient(180deg,rgba(255,242,228,.08),transparent 28%,transparent 70%,rgba(30,18,20,.1))}
 .scene-window::after{content:"";position:absolute;inset:8px;border:1px solid rgba(255,250,241,.10);border-radius:3px}
-.scene-window--cta{display:flex;align-items:center;justify-content:center;gap:14px;pointer-events:auto;text-decoration:none;color:#6f3540;letter-spacing:.2em;text-transform:uppercase;font-size:12px;font-weight:600;background:linear-gradient(110deg,rgba(255,244,233,.16),rgba(255,244,233,.28),rgba(255,244,233,.16));transition:background .35s ease,border-color .35s ease,transform .35s ease}
-.scene-window--cta::before,.scene-window--cta::after{pointer-events:none}
-.scene-window--cta span,.scene-window--cta i{position:relative;z-index:1}
-.scene-window--cta i{display:grid;place-items:center;width:42px;height:42px;border:1px solid rgba(111,53,64,.45);border-radius:50%;font-style:normal;font-size:20px;letter-spacing:0;transition:transform .35s ease,background .35s ease}
-.scene-window--cta:hover{background:linear-gradient(110deg,rgba(255,244,233,.28),rgba(255,244,233,.42),rgba(255,244,233,.28));border-color:rgba(111,53,64,.52)}
-.scene-window--cta:hover i{transform:translate(3px,-3px);background:rgba(255,255,255,.2)}
-.scene-window--cta:focus-visible{outline:2px solid #8c2d3e;outline-offset:4px}
-/* Keep the portfolio link; remove the large outlined scene-window around it. */
-.scene-window--cta{width:max-content;height:auto;min-height:0;margin:clamp(28px,5vh,60px) auto;padding:0;overflow:visible;border:0;border-radius:0;background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
-.scene-window--cta::before,.scene-window--cta::after{display:none}
-.scene-window--cta:hover{background:transparent;border-color:transparent}
 .foot-cta,.foot-grid{padding:clamp(22px,3vw,38px);border:1px solid rgba(255,250,241,.48);border-radius:5px;background:linear-gradient(132deg,rgba(255,248,238,.88),rgba(246,226,211,.76));backdrop-filter:blur(17px) saturate(1.25);-webkit-backdrop-filter:blur(17px) saturate(1.25);box-shadow:inset 0 1px rgba(255,255,255,.82),0 18px 52px rgba(35,17,19,.16)}
 .foot-cta{margin-bottom:22px;border-bottom:1px solid rgba(74,43,43,.18)}
 .foot-cta>a{color:#27191a}.foot-cta>a span,.foot-cta>p:last-child{color:#743641}
@@ -1193,7 +1182,7 @@ body[data-layout-closing="b"] .fin{display:flex;flex-direction:column;align-item
   <div class="word-fb" aria-hidden="true">KATANA</div>
   <div class="hero-side" data-rv="up"><span class="v jp">刀</span></div>
 </section>
-<a class="scene-window scene-window--cta" href="https://katana-studio-portfolio.vercel.app/" aria-label="Explore portfolio"><span>Explore Portfolio</span><i aria-hidden="true">↗</i></a>
+
 
 <!-- ============================================================ What we do -->
 <section class="sec" id="pathways" data-cam="1">
