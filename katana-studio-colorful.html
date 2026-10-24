@@ -4497,7 +4497,7 @@ function wireHeroExit() {
     { el: $('.peek'),      at: .00, span: .26 },
     { el: $('.hero-cue'),  at: .10, span: .30, shift: true },
     { el: $('.hero-copy-panel'), at: .18, span: .36, shift: true },
-    ...$('.chip').map((el, i) => ({ el: el, at: .20 + i * .10, span: .30, shift: true })),
+    ...Array.from(document.querySelectorAll('.chip')).map((el, i) => ({ el: el, at: .20 + i * .10, span: .30, shift: true })),
     { el: $('.chapters'),  at: .60, span: .30 },  /* shifting it carries the chips twice */
     { el: $('.hero-side'), at: .70, span: .30 }   /* its transform is the centring -50% */
   ].filter(o => o.el);
