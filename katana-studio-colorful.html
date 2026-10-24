@@ -1075,13 +1075,13 @@ body,.nav-link,.nav-burger,.eyebrow,.body,.body-lg,.service-group,.services-more
 /* Editorial readability pass: warm glass copy surfaces alternate with clear scene apertures. */
 .hero .hero-foot, body[data-layout-hero="b"] .hero-foot{width:100%;max-width:none;margin:0;padding-bottom:clamp(22px,4vh,40px)}
 .hero .hero-cue{justify-content:flex-start;margin:0 0 12px;padding-left:clamp(0px,1.2vw,18px);color:#f4e4d6;text-shadow:0 1px 14px #261517}
-.hero-copy-panel{position:relative;isolation:isolate;overflow:hidden;width:min(760px,58vw);padding:clamp(20px,3vw,38px);border-radius:5px;color:#2c1c1e}
+.hero-copy-panel{position:relative;isolation:isolate;overflow:visible;width:min(760px,58vw);padding:0;border:0;border-radius:0;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none;color:#fff8f0;text-shadow:0 2px 18px rgba(20,8,12,.76)}
 .glass-panel{border:1px solid rgba(255,250,241,.72);background:linear-gradient(132deg,rgba(255,248,238,.91),rgba(246,226,211,.78) 54%,rgba(255,242,229,.82));backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);box-shadow:inset 0 1px rgba(255,255,255,.88),inset 0 -1px rgba(125,77,69,.12),0 24px 66px rgba(35,17,19,.22)}
 .glass-panel::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 12% 0%,rgba(255,255,255,.58),transparent 42%),linear-gradient(115deg,rgba(255,255,255,.20),transparent 40%,rgba(197,133,117,.10))}
-.hero-copy-panel .eyebrow{color:#7c3440;text-shadow:none;margin-bottom:12px}
+.hero-copy-panel .eyebrow{color:#fff0e5;text-shadow:0 1px 12px rgba(20,8,12,.8);margin-bottom:12px}
 .hero-copy-panel .eyebrow .dot{background:#8c2d3e;box-shadow:0 0 9px rgba(140,45,62,.38)}
-.hero-copy-panel h1{color:#27191a;text-shadow:none;font-size:clamp(34px,4.1vw,58px);line-height:.99;letter-spacing:-.025em;margin:0 0 12px}
-.hero-copy-panel .hero-sub{max-width:52ch;color:#574749;text-shadow:none;margin:0;font-weight:400}
+.hero-copy-panel h1{color:#fff8f0;text-shadow:0 2px 20px rgba(20,8,12,.78);font-size:clamp(34px,4.1vw,58px);line-height:.99;letter-spacing:-.025em;margin:0 0 12px}
+.hero-copy-panel .hero-sub{max-width:52ch;color:#fff1e5;text-shadow:0 1px 12px rgba(20,8,12,.82);margin:0;font-weight:400}
 .hero-copy-panel .mask-line:not(.word-reveal)>span{transition-delay:120ms}
 .section-glass{position:relative;z-index:4;width:100%;padding:clamp(22px,4vw,52px);border-radius:6px}
 .section-glass .sec-head{margin-bottom:clamp(20px,3vw,38px)}
@@ -1168,7 +1168,7 @@ body[data-layout-closing="b"] .fin{display:flex;flex-direction:column;align-item
   <div class="hero-spacer"></div>
   <div class="hero-foot">
     <div class="hero-cue" data-rv="fade"><span>Scroll to enter</span><span class="track"><i></i></span></div>
-    <div class="hero-copy-panel glass-panel" data-rv="up">
+    <div class="hero-copy-panel" data-rv="up">
       <div class="eyebrow"><span class="dot"></span> Katana Studios — Made to hit</div>
       <h1 class="display h-hero"><span class="mask-line"><span>Stories that</span></span><span class="mask-line"><span>cut through.</span></span><span class="mask-line"><span>Crafted to stay.</span></span></h1>
       <p class="hero-sub body">Youthful. Modern. Rooted. Quiet confidence, made to hit.</p>
