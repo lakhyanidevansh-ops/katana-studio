@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#15110f">
+    <meta name="description" content="Katana Studios — bold ideas, crafted to make an impact. Explore our video portfolio.">
+    <title>Katana Studios — Creative work with an edge</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Katana Studios home">
+        <img class="brand-mark" src="assets/katana-brushmark-transparent.png" alt="" aria-hidden="true">
+        <span class="brand-name"><strong>KATANA</strong><small>STUDIOS</small></span>
+      </a>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="#work">WORK <span data-nav-video-total>03</span></a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+      <a class="header-cta" href="#contact">LET’S TALK <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> INDEPENDENT CREATIVE STUDIO</p>
+          <h1 id="hero-title">Bold ideas.<br><em>Crafted to</em><br>make an impact.</h1>
+          <p class="hero-description">A collection of campaigns, films and digital stories made to stay with you.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">EXPLORE THE WORK <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="#contact">HAVE A PROJECT? <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-facts" aria-label="Portfolio overview">
+            <div><strong data-total-categories>02</strong><span>CREATIVE LANES</span></div>
+            <div><strong data-total-videos>03</strong><span>PROJECTS</span></div>
+            <div><strong>01</strong><span>SHARP POINT OF VIEW</span></div>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <img class="hero-art__logo" src="assets/katana-brushmark-transparent.png" alt="Katana Studios brushmark">
+        </div>
+      </section>
+
+      <div class="portfolio-intro" id="work">
+        <div class="portfolio-intro__copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> THE PORTFOLIO</p>
+          <h2>Different frames.<br><em>One point of view.</em></h2>
+          <p class="portfolio-intro__note">Browse work by discipline.</p>
+        </div>
+      </div>
+
+      <nav class="category-nav" id="categoryNav" aria-label="Jump to a portfolio category"></nav>
+
+      <div id="categorySections" class="category-sections" aria-live="off"></div>
+
+      <section class="contact-panel" id="contact" aria-labelledby="contact-title">
+        <div class="contact-panel__content">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> HAVE A GOOD ONE IN MIND?</p>
+          <h2 id="contact-title">Let’s make<br><em>something matter.</em></h2>
+          <a class="button button-primary" href="https://wa.me/917486084751?text=Hi%20Katana%20Studios%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer">START A CONVERSATION <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="contact-panel__aside">
+          <span class="contact-panel__mark" aria-hidden="true">K</span>
+          <p>GOOD WORK<br>STARTS WITH<br>A GOOD CHAT.</p>
+          <a data-email-text href="mailto:sales.katanastudios@gmail.com">sales.katanastudios@gmail.com</a>
+          <a data-phone-link data-phone-text href="tel:7486084751">7486084751</a>
+          <a data-instagram-link href="https://www.instagram.com/katanastudio.ads?obrf=amhhZ3NrenA3ZWpw" target="_blank" rel="noreferrer">INSTAGRAM ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand brand--footer" href="#top" aria-label="Back to top">
+        <img class="brand-mark" src="assets/katana-brushmark-transparent.png" alt="" aria-hidden="true">
+        <span class="brand-name"><strong>KATANA</strong><small>STUDIOS</small></span>
+      </a>
+      <p>INDEPENDENT CREATIVE STUDIO <span>·</span> VISUAL STORIES WITH AN EDGE</p>
+      <span class="copyright">© <span data-year></span> KATANA STUDIOS</span>
+    </footer>
+
+    <dialog class="video-dialog" id="videoDialog" aria-labelledby="dialogTitle">
+      <div class="video-dialog__bar">
+        <div><p class="eyebrow" data-dialog-category>PROJECT / VIDEO</p><h2 id="dialogTitle">Project title</h2></div>
+        <button class="dialog-close" type="button" data-close-dialog aria-label="Close video player">CLOSE <span aria-hidden="true">×</span></button>
+      </div>
+      <div class="player-frame" id="playerFrame">
+        <div class="player-empty" id="playerEmpty">
+          <span class="player-empty__icon" aria-hidden="true">▶</span>
+          <p class="eyebrow">READY WHEN YOU ARE</p>
+          <h3>This project is waiting for its link.</h3>
+          <p>Paste a YouTube or Google Drive video URL into this project’s slot in <code>js/work.js</code>.</p>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="js/work.js"></script>
+    <script src="js/site.js"></script>
+  </body>
+</html>
+

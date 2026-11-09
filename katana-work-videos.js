@@ -65,24 +65,24 @@
     // ================================================================
     workBook: {
       films: [
-        { title: 'Films · Video 1', driveLink: '', sampleSrc: tears, poster: tearsPoster }, // FILMS VIDEO 1 link yahan
-        { title: 'Films · Video 2', driveLink: '', sampleSrc: escapes, poster: escapesPoster }, // FILMS VIDEO 2 link yahan
-        { title: 'Films · Video 3', driveLink: '', sampleSrc: fun, poster: funPoster } // FILMS VIDEO 3 link yahan
+        { title: 'Films · Video 1', driveLink: 'https://drive.google.com/file/d/1i1OnDUzoaLApjtuq48FggQ0Ym0pj9BB0/view?usp=sharing', sampleSrc: tears, poster: tearsPoster }, // FILMS VIDEO 1 link yahan
+        { title: 'Films · Video 2', driveLink: 'https://drive.google.com/file/d/1iqJPSlDVsv5RYsAB20UoOckoudvC2bX1/view?usp=sharing', sampleSrc: escapes, poster: escapesPoster }, // FILMS VIDEO 2 link yahan
+        { title: 'Films · Video 3', driveLink: 'https://drive.google.com/file/d/1yI17RiJeBRfoVj6fvuO8BkceEd4SuYw8/view?usp=sharing', sampleSrc: fun, poster: funPoster } // FILMS VIDEO 3 link yahan
       ],
       ads: [
-        { title: 'Ads · Video 1', driveLink: '', sampleSrc: escapes, poster: escapesPoster }, // ADS VIDEO 1 link yahan
-        { title: 'Ads · Video 2', driveLink: '', sampleSrc: fun, poster: funPoster }, // ADS VIDEO 2 link yahan
-        { title: 'Ads · Video 3', driveLink: '', sampleSrc: tears, poster: tearsPoster } // ADS VIDEO 3 link yahan
+        { title: 'Ads · Video 1', driveLink: 'https://drive.google.com/file/d/1Xw-WOHbmK8ux9jH3m2l26e9-Txx6LOzj/view?usp=sharing', sampleSrc: escapes, poster: escapesPoster }, // ADS VIDEO 1 link yahan
+        { title: 'Ads · Video 2', driveLink: 'https://drive.google.com/file/d/1odd9rpIp2tsdUhgwOwJ8a19wrLwyM2cy/view?usp=sharing', sampleSrc: fun, poster: funPoster }, // ADS VIDEO 2 link yahan
+        { title: 'Ads · Video 3', driveLink: 'https://drive.google.com/file/d/1yzkPG9xLLGAdvt8lWghlG4WRjGiqCkwa/view?usp=sharing', sampleSrc: tears, poster: tearsPoster } // ADS VIDEO 3 link yahan
       ],
       social: [
-        { title: 'Social Media · Video 1', driveLink: '', sampleSrc: fun, poster: funPoster }, // SOCIAL VIDEO 1 link yahan
-        { title: 'Social Media · Video 2', driveLink: '', sampleSrc: tears, poster: tearsPoster }, // SOCIAL VIDEO 2 link yahan
-        { title: 'Social Media · Video 3', driveLink: '', sampleSrc: escapes, poster: escapesPoster } // SOCIAL VIDEO 3 link yahan
+        { title: 'Social Media · Video 1', driveLink: 'https://drive.google.com/file/d/1WjkmOaf1udcEveSw_iLqCuN9Q1Hfutwb/view?usp=sharing', sampleSrc: fun, poster: funPoster }, // SOCIAL VIDEO 1 link yahan
+        { title: 'Social Media · Video 2', driveLink: 'https://drive.google.com/file/d/1-LNLJVYoli7Y6g7SBtpBc_3FGcjiqTSZ/view?usp=sharing', sampleSrc: tears, poster: tearsPoster }, // SOCIAL VIDEO 2 link yahan
+        { title: 'Social Media · Video 3', driveLink: 'https://drive.google.com/file/d/1nnWepuEJelG7iJTL58yfeNgMhi3cqq3M/view?usp=sharing', sampleSrc: escapes, poster: escapesPoster } // SOCIAL VIDEO 3 link yahan
       ],
       production: [
-        { title: 'Production · Video 1', driveLink: '', sampleSrc: tears, poster: tearsPoster }, // PRODUCTION VIDEO 1 link yahan
-        { title: 'Production · Video 2', driveLink: '', sampleSrc: escapes, poster: escapesPoster }, // PRODUCTION VIDEO 2 link yahan
-        { title: 'Production · Video 3', driveLink: '', sampleSrc: fun, poster: funPoster } // PRODUCTION VIDEO 3 link yahan
+        { title: 'Production · Video 1', driveLink: 'https://drive.google.com/file/d/1thrGMPitz6LtqCGH0KPbKHAdywf7ASTl/view?usp=sharing', sampleSrc: tears, poster: tearsPoster }, // PRODUCTION VIDEO 1 link yahan
+        { title: 'Production · Video 2', driveLink: 'https://drive.google.com/file/d/191U7Tlauhs9hHPiMn4fyjOEPnv7iMobu/view?usp=sharing', sampleSrc: escapes, poster: escapesPoster }, // PRODUCTION VIDEO 2 link yahan
+        { title: 'Production · Video 3', driveLink: 'https://drive.google.com/file/d/1B9_yFmcrkf1y_M2oem3Lr95D4FI9u5Aa/view?usp=sharing', sampleSrc: fun, poster: funPoster } // PRODUCTION VIDEO 3 link yahan
       ]
     },
 
