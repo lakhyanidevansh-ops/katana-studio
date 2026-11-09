@@ -916,6 +916,13 @@ body.katana-guide .nav-links{opacity:.55}
 .what-card--photo::before{background:radial-gradient(ellipse at 70% 35%,#c49e664d,transparent 54%),linear-gradient(180deg,transparent 30%,#090a0d 100%)}
 .what-card--social::before{background:radial-gradient(ellipse at 38% 38%,#6c75514f,transparent 54%),linear-gradient(180deg,transparent 30%,#090a0d 100%)}
 .what-card--production::before{background:radial-gradient(ellipse at 54% 40%,#705c504c,transparent 54%),linear-gradient(180deg,transparent 30%,#090a0d 100%)}
+.what-card{background-size:cover;background-position:center}
+.what-card--films{background-image:url('assets/category-films.jpg')}
+.what-card--photo{background-image:url('assets/category-ads.jpg')}
+.what-card--social{background-image:url('assets/category-social.jpg')}
+.what-card--production{background-image:url('assets/category-production.jpg')}
+.what-card::before{z-index:0;background:linear-gradient(180deg,rgba(12,8,10,.06) 8%,rgba(12,8,10,.2) 48%,rgba(9,10,13,.84) 100%)}
+.what-card>*{z-index:1}
 .what-card:hover{transform:translateY(-6px);border-color:#e4c48d;filter:brightness(1.12)}.what-card:hover::before{transform:scale(1.08)}
 .what-card b{position:relative;font:clamp(24px,3vw,38px)/1 Georgia,serif}.what-card i{position:absolute;right:22px;bottom:21px;font-style:normal;color:#ddb979;font-size:22px}.what-num{position:absolute;top:21px;left:22px;color:#dfc18c;font-size:10px;letter-spacing:.2em}
 .services-intro{max-width:800px;margin:38px auto 44px;text-align:center}.services-intro .body-lg{margin:18px 0 25px}.services-intro .arrowlink{justify-content:center}
@@ -5142,6 +5149,8 @@ else addEventListener('DOMContentLoaded', boot);
 
 </body>
 </html>
+
+
 
 
 
