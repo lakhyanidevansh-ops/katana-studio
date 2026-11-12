@@ -39,9 +39,9 @@ window.KATANA_WORK = {
         "https://drive.google.com/file/d/14K_KHn9d3o6UK56b9FHqSeJl4-y2pbrM/view?usp=sharing",
         "https://drive.google.com/file/d/1eb6B2A8JyYuml7bvK9TJ160ejVrU4W9c/view?usp=sharing",
         "https://drive.google.com/file/d/1ZIGL33HgNs2xMyVgl5y2LT3bODFfSfzb/view?usp=sharing",
-        "", // ADS VIDEO 07 — paste GitHub Release filename or direct video URL here.
-        "", // ADS VIDEO 08 — paste GitHub Release filename or direct video URL here.
-        ""  // ADS VIDEO 09 — paste GitHub Release filename or direct video URL here.
+        "Nilang.cables.brand.video.mp4", // ADS VIDEO 07
+        "Nilang cables diwali campaign.mp4", // ADS VIDEO 08
+        "Sai Drishti Final.mp4"  // ADS VIDEO 09
       ], [
         "matinoz TVC.jpg",
         "BehaveNeu Brand video.jpg",
@@ -49,13 +49,13 @@ window.KATANA_WORK = {
         "Grew Solar Brand film.jpg.jpeg",
         "The Architecture brand podcast.jpg.jpeg",
         "SANMACH Machinery product film.jpg.jpeg",
-        "", // Optional thumbnail filename, e.g. "Ads 07.jpg" in assets/thumbnails/.
-        "",
-        ""
+        "ads7.png", // ADS VIDEO 07 thumbnail
+        "ads8.png", // ADS VIDEO 08 thumbnail
+        "ads9.png"  // ADS VIDEO 09 thumbnail
       ], [
         "Matinoz TVC", "Behaveneu Brand Video", "BNI Commercial",
         "Grew Solar Brand Film", "Architecture Brand Podcast", "SANMACH Product Film",
-        "Ads Video 07", "Ads Video 08", "Ads Video 09"
+        "Nilang cables brand video", "Nilang cables diwali campaign", "Sai Drishti Final"
       ])
     },
     {
