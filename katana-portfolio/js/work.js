@@ -14,7 +14,8 @@ const katanaVideo = (filename) => {
   return url.href;
 };
 const videoEntries = (sources, thumbnails = [], titles = []) => sources.map((source, index) => ({
-  url: /^https?:\/\//i.test(source) ? source : katanaVideo(source),
+  // Empty source means a visible, ready-to-fill project slot (no broken request).
+  url: !source ? "" : /^https?:\/\//i.test(source) ? source : katanaVideo(source),
   thumbnail: thumbnails[index]
     ? `assets/thumbnails/${encodeURIComponent(thumbnails[index])}`
     : "",
@@ -37,16 +38,24 @@ window.KATANA_WORK = {
         "vidssave.com BNI commercial 720P.mp4",
         "https://drive.google.com/file/d/14K_KHn9d3o6UK56b9FHqSeJl4-y2pbrM/view?usp=sharing",
         "https://drive.google.com/file/d/1eb6B2A8JyYuml7bvK9TJ160ejVrU4W9c/view?usp=sharing",
-        "https://drive.google.com/file/d/1ZIGL33HgNs2xMyVgl5y2LT3bODFfSfzb/view?usp=sharing"
+        "https://drive.google.com/file/d/1ZIGL33HgNs2xMyVgl5y2LT3bODFfSfzb/view?usp=sharing",
+        "", // ADS VIDEO 07 — paste GitHub Release filename or direct video URL here.
+        "", // ADS VIDEO 08 — paste GitHub Release filename or direct video URL here.
+        ""  // ADS VIDEO 09 — paste GitHub Release filename or direct video URL here.
       ], [
         "matinoz TVC.jpg",
         "BehaveNeu Brand video.jpg",
         "BNI Brand shoot.jpg",
         "Grew Solar Brand film.jpg.jpeg",
         "The Architecture brand podcast.jpg.jpeg",
-        "SANMACH Machinery product film.jpg.jpeg"
+        "SANMACH Machinery product film.jpg.jpeg",
+        "", // Optional thumbnail filename, e.g. "Ads 07.jpg" in assets/thumbnails/.
+        "",
+        ""
       ], [
-        "Matinoz TVC"
+        "Matinoz TVC", "Behaveneu Brand Video", "BNI Commercial",
+        "Grew Solar Brand Film", "Architecture Brand Podcast", "SANMACH Product Film",
+        "Ads Video 07", "Ads Video 08", "Ads Video 09"
       ])
     },
     {

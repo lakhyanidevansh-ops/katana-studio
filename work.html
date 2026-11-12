@@ -435,8 +435,12 @@ button{font:inherit}
 .page-reels__note{margin:0;font:500 clamp(6px,.62vw,8px)/1.2 Montserrat,Arial,sans-serif;letter-spacing:.06em;color:rgba(32,26,25,.56);text-align:right}
 .page-reels__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(5px,.8vw,10px);flex:1;min-height:0}
 .page-reel{display:flex;flex-direction:column;gap:4px;min-width:0;min-height:0}
-.page-reel__player{display:block;width:100%;height:auto;min-height:0;flex:1;aspect-ratio:16/9;border:1px solid rgba(43,39,33,.2);background:#241e1b;object-fit:cover}
-.page-reel__player iframe{height:100%;border:0}
+.page-reel__open{position:relative;display:grid;flex:1;min-height:0;width:100%;padding:0;place-items:center;overflow:hidden;aspect-ratio:16/9;border:1px solid rgba(43,39,33,.2);background:radial-gradient(ellipse at 70% 25%,rgba(140,45,62,.2),transparent 54%),linear-gradient(145deg,#342a26,#171412);cursor:pointer}
+.page-reel__open img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.page-reel__open:hover img{transform:scale(1.035)}
+.page-reel__open:disabled{cursor:default}
+.page-reel__play{position:relative;z-index:2;display:grid;width:34px;height:34px;place-items:center;padding-left:2px;border:1px solid rgba(255,255,255,.72);border-radius:50%;color:#fff;background:rgba(18,14,13,.58);font:15px/1 Arial,sans-serif;box-shadow:0 2px 12px #0005}
+.page-reel__empty{position:absolute;right:4px;bottom:4px;left:4px;z-index:2;color:#fff9;text-align:center;font:600 clamp(5px,.55vw,7px)/1.2 Montserrat,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-shadow:0 1px 5px #000}
 .page-reel__title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:600 clamp(6px,.68vw,9px)/1.15 Montserrat,Arial,sans-serif;letter-spacing:.05em;color:rgba(32,26,25,.72)}
 @media(max-width:640px){
   .page-reels{left:5%;right:5%;top:50%;height:39%;gap:4px;padding:5px}
@@ -447,6 +451,18 @@ button{font:inherit}
   .page-reel{gap:2px}
   .page-reel__title{font-size:5px;letter-spacing:0}
 }
+
+.sketch-video-dialog{width:min(1000px,calc((100dvh - 130px)*16/9),calc(100vw - 28px));max-width:none;max-height:calc(100dvh - 28px);padding:0;overflow:hidden;border:1px solid #ffffff44;color:#f7f0e7;background:#171311;box-shadow:0 30px 100px #000a}
+.sketch-video-dialog::backdrop{background:#080606d9;backdrop-filter:blur(8px)}
+.sketch-video-dialog.is-portrait{width:min(440px,calc((100dvh - 130px)*9/16),calc(100vw - 28px))}
+.sketch-video-dialog__bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 18px}
+.sketch-video-dialog__title{margin:0;font:600 14px/1.3 Montserrat,Arial,sans-serif;letter-spacing:.04em}
+.sketch-video-dialog__close{border:1px solid #ffffff45;padding:8px 11px;color:#f7f0e7;background:transparent;font:600 10px Montserrat,Arial,sans-serif;letter-spacing:.12em;cursor:pointer}
+.sketch-video-frame{display:grid;width:100%;aspect-ratio:16/9;max-height:calc(100dvh - 110px);place-items:center;overflow:hidden;background:#080707}
+.sketch-video-dialog.is-portrait .sketch-video-frame{aspect-ratio:9/16}
+.sketch-video-frame video{display:block;width:100%;height:100%;object-fit:contain}
+.sketch-video-empty{padding:24px;color:#d7c8b7;text-align:center;font:500 13px/1.6 Montserrat,Arial,sans-serif}
+@media(max-width:640px){.sketch-video-dialog__bar{padding:10px}.sketch-video-dialog__title{font-size:12px}.sketch-video-frame{max-height:calc(100dvh - 75px)}}
 
 .foot{font-size:11.5px;letter-spacing:var(--track-caps);text-transform:uppercase;
   color:var(--ink-faint);text-align:center;padding-bottom:44px}
@@ -475,8 +491,8 @@ button{font:inherit}
 <main class="page home">
 
   <header class="top">
-    <a class="name" href="katana-studio-colorful.html"><img src="katana-brushmark.png" alt="" width="42" height="42"> Katana Studios</a>
-    <nav><a href="katana-studio-colorful.html">Studio</a><a href="#sketchbook">Work book</a><a href="#about">Identity</a><a href="#plates">Index</a></nav>
+    <a class="name" href="index.html"><img src="katana-brushmark.png" alt="" width="42" height="42"> Katana Studios</a>
+    <nav><a href="index.html">Studio</a><a href="#sketchbook">Work book</a><a href="#about">Identity</a><a href="#plates">Index</a></nav>
   </header>
 
   <section id="sketchbook" class="hero">
@@ -548,6 +564,14 @@ button{font:inherit}
   <p class="foot" id="contact">Katana Studios · Films · Ads / Commercials · Social Media · Production</p>
 </main>
 
+<dialog class="sketch-video-dialog" id="sketchVideoDialog" aria-labelledby="sketchVideoTitle">
+  <div class="sketch-video-dialog__bar">
+    <h2 class="sketch-video-dialog__title" id="sketchVideoTitle">Selected work</h2>
+    <button class="sketch-video-dialog__close" id="sketchVideoClose" type="button">CLOSE ×</button>
+  </div>
+  <div class="sketch-video-frame" id="sketchVideoFrame"></div>
+</dialog>
+
 <script src="katana-work-videos.js"></script>
 <script>
 /* =====================================================================
@@ -599,28 +623,51 @@ function pageReels(i){
   const grid=el('div','page-reels__grid');
   items.slice(0,4).forEach((item,index)=>{
     const card=el('article','page-reel');
-    const driveId=window.KATANA_DRIVE?.fileId(item.driveLink||item.driveId||'')||'';
-    let media;
-    if(driveId){
-      media=el('iframe','page-reel__player');
-      media.src='https://drive.google.com/file/d/'+encodeURIComponent(driveId)+'/preview';
-      media.title=page.title+' sample '+String(index+1).padStart(2,'0');
-      media.loading='lazy';
-      media.allow='autoplay; fullscreen; picture-in-picture';
-      media.allowFullscreen=true;
-      media.referrerPolicy='strict-origin-when-cross-origin';
-    }else{
-      media=el('video','page-reel__player');
-      media.controls=true;media.playsInline=true;media.preload='none';
-      if(item.poster)media.poster=item.poster;
-      const source=el('source');source.src=item.sampleSrc||'';source.type='video/mp4';media.append(source);
-    }
+    const media=el('button','page-reel__open');
+    media.type='button';
+    media.setAttribute('aria-label',(item.sampleSrc?'Play ':'Add GitHub video link for ')+(item.title||page.title+' sample '+String(index+1).padStart(2,'0')));
+    media.dataset.videoSrc=item.sampleSrc||'';
+    media.dataset.videoPoster=item.poster||'';
+    media.dataset.videoTitle=item.title||page.title+' · Video '+String(index+1);
+    if(item.poster){const poster=el('img');poster.src=item.poster;poster.alt='';poster.loading='lazy';poster.decoding='async';media.append(poster)}
+    const play=el('span','page-reel__play');play.setAttribute('aria-hidden','true');play.textContent='▶';media.append(play);
+    if(!item.sampleSrc){const missing=el('span','page-reel__empty');missing.textContent='Add GitHub video URL';media.append(missing)}
+    media.addEventListener('pointerdown',event=>event.stopPropagation());
+    media.addEventListener('click',event=>{event.stopPropagation();openSketchVideo(media)});
     const caption=el('span','page-reel__title');caption.textContent=item.title||('Sample '+String(index+1).padStart(2,'0'));
     card.append(media,caption);grid.append(card);
   });
   panel.append(head,grid);
   return panel;
 }
+
+function openSketchVideo(button){
+  const dialog=document.getElementById('sketchVideoDialog');
+  const frame=document.getElementById('sketchVideoFrame');
+  const title=document.getElementById('sketchVideoTitle');
+  const src=button.dataset.videoSrc;
+  dialog.classList.remove('is-portrait');
+  title.textContent=button.dataset.videoTitle;
+  frame.replaceChildren();
+  if(!src){const note=el('p','sketch-video-empty');note.textContent='Add this clip’s GitHub video URL in katana-work-videos.js (sampleSrc).';frame.append(note)}
+  else{
+    const video=el('video');video.controls=true;video.autoplay=true;video.playsInline=true;video.preload='metadata';
+    if(button.dataset.videoPoster)video.poster=button.dataset.videoPoster;
+    video.addEventListener('loadedmetadata',()=>dialog.classList.toggle('is-portrait',video.videoHeight>video.videoWidth),{once:true});
+    video.src=src;frame.append(video);
+  }
+  if(!dialog.open)dialog.showModal();
+}
+function closeSketchVideo(){const dialog=document.getElementById('sketchVideoDialog');if(dialog.open)dialog.close()}
+document.getElementById('sketchVideoClose').addEventListener('click',closeSketchVideo);
+document.getElementById('sketchVideoDialog').addEventListener('click',event=>{if(event.target===event.currentTarget)closeSketchVideo()});
+document.getElementById('sketchVideoDialog').addEventListener('close',()=>{
+  const frame=document.getElementById('sketchVideoFrame');
+  const video=frame.querySelector('video');
+  if(video){video.pause();video.removeAttribute('src');video.load()}
+  frame.replaceChildren();
+  document.getElementById('sketchVideoDialog').classList.remove('is-portrait');
+});
 
 function halfEl(pos,i){
   const d=el('div','sb-half '+pos);

@@ -1,23 +1,27 @@
-# Katana Studios
+# Katana Studios Website
 
-A static portfolio website for Katana Studios.
+Static multi-page site for Katana Studios. The production landing page is `index.html`.
 
-## Pages
+## Main pages
 
-- `katana-studio-colorful.html` — index / landing page
-- `work.html` — What We Do work book
-- `films.html` — film shelf with ten volumes
+- `index.html` — landing page
+- `work.html` — What We Do sketchbook and its video player
+- `films.html` — film shelf and film detail/player views
+- `katana-portfolio/index.html` — portfolio gallery and video player
 
-## Run locally
+## Where to edit content
 
-On Windows, double-click `START FILMS.bat` and keep the terminal open. Then open `http://127.0.0.1:8000/katana-studio-colorful.html`.
+- `katana-work-videos.js` — sketchbook video URLs/posters, banner media, film shelf entries, and outbound social/profile links.
+- `katana-portfolio/js/work.js` — portfolio video URLs, titles, and thumbnail filenames. Ads has 9 slots; Ads 07–09 are ready for your links.
+- `katana-portfolio/assets/thumbnails/` — portfolio poster/thumbnail images.
+- `PROJECT-MAP.md` — detailed file-by-file guide and exact fields to edit.
 
-## Edit videos and links
+The sketchbook and portfolio player layouts detect each clip's orientation and fit portrait or landscape video accordingly. For GitHub video hosting details, see `PROJECT-MAP.md`.
 
-Edit `katana-work-videos.js`. It contains desktop/mobile banner video links, work book video slots, ten film volume links, social links, and film credit links. For Google Drive videos, set sharing to “Anyone with the link” / Viewer and paste the share link into the matching `driveLink` field. Each film volume has its own title, description, optional poster, and Drive link.
+## Local preview
 
-See `README.txt` for the step-by-step Hinglish guide. Blank Drive links use the included temporary sample clips where configured.
+On Windows, run `START FILMS.bat`, keep its terminal open, then visit `http://127.0.0.1:8000/`.
 
-## Assets
+## Search indexing
 
-Keep the `assets`, `katana-sketchbook`, `secret-pathways-assets`, and `threeui-ashen-press` folders alongside the HTML pages; the pages reference these files by relative path.
+`robots.txt` points crawlers to `sitemap.xml`. After deployment, submit `https://www.katanastudios.in/sitemap.xml` in Google Search Console.

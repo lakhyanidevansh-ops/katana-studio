@@ -2,7 +2,7 @@
 
 ## Where image files go
 
-Place all covers in `assets/thumbnails/`. Use a clear filename and keep the exact file extension. The 42 current cover files are included in that folder.
+Place all covers in `assets/thumbnails/`. Use a clear filename and keep the exact file extension. The existing cover files are included in that folder. Ads 07–09 are empty slots; add a thumbnail filename in the matching position in `js/work.js` when you add each video.
 
 ## How a card finds its cover
 

@@ -86,12 +86,13 @@
       const card = document.createElement("button");
       card.type = "button";
       card.className = "work-card";
+      if (!url) card.classList.add("work-card--empty");
       card.dataset.videoUrl = url;
       card.dataset.category = category.title;
       card.dataset.title = projectTitle;
       card.dataset.variant = String(index % 4);
       card.style.setProperty("--tone", category.hue);
-      card.setAttribute("aria-label", `Play ${category.title}: ${projectTitle}`);
+      card.setAttribute("aria-label", url ? `Play ${category.title}: ${projectTitle}` : `Add a video link for ${category.title}: ${projectTitle}`);
 
       const poster = document.createElement("span");
       poster.className = "work-card__poster";
@@ -118,7 +119,8 @@
       categoryLabel.textContent = category.title.toUpperCase();
       const play = document.createElement("span");
       play.className = "poster-play";
-      play.innerHTML = playIcon;
+      if (url) play.innerHTML = playIcon;
+      else play.textContent = "ADD LINK";
       poster.append(orbit, serial, categoryLabel, play);
 
       const caption = document.createElement("span");
@@ -195,7 +197,7 @@
     dialogCategory.textContent = `${category.toUpperCase()} / VIDEO`;
 
     if (!url) {
-      showEmptyState("This project is waiting for its link.");
+      showEmptyState("Paste a GitHub video filename or direct video URL into this Ads slot in js/work.js.");
     } else {
       const media = parseVideoUrl(url);
       if (!media) {

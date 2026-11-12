@@ -1,17 +1,9 @@
 /*
-  KATANA STUDIOS — VIDEO + LINK CONTROL FILE
-  =========================================
-  BHAI, LINKS EDIT KARNE KE LIYE BAS YE 4 STEPS:
-  1. Google Drive me video par Share > General access > Anyone with the link > Viewer karo.
-  2. Copy link dabao.
-  3. Neeche sahi naam wala slot dhoondo. driveLink: '' ke andar apna poora link paste karo.
-  4. File save karo, phir website refresh karo.
-
-  Example:
-  driveLink: 'https://drive.google.com/file/d/PASTE_FILE_ID/view?usp=sharing'
-
-  driveLink khaali chhoda hai to sampleSrc wala sample video chalega.
-  Google Drive link daalne ke baad sampleSrc ko badalne ki zaroorat nahi hai.
+  KATANA STUDIOS — CENTRAL CONTENT & LINK CONFIG
+  Full file map: PROJECT-MAP.md
+  Sketchbook video/player links and covers: workBook[].sampleSrc + poster.
+  Portfolio category videos, titles, and thumbnails: katana-portfolio/js/work.js.
+  Film shelf Drive links and outbound social/profile URLs are also below.
 */
 (() => {
   // Ye helpers share link me se Drive file ID nikaalte hain. Inko edit mat karna.
@@ -59,35 +51,37 @@
     },
 
     // ================================================================
-    // B · WORK BOOK VIDEOS
-    // Har category ke 3 slots. Har slot me apna Drive link daal sakte ho.
-    // Example: Ads Video 2 ko badalna ho, to sirf usi driveLink ko edit karo.
+    // B · SKETCHBOOK WORK VIDEOS
+    // GITHUB REPO PLAYER: paste each GitHub/API video URL into sampleSrc.
+    // Paste its thumbnail's relative path into poster (example: 'katana-portfolio/assets/thumbnails/cover.jpg').
+    // Video URL example: 'https://katana-studio-portfolio.vercel.app/api/video?file=your-video.mp4'
+    // Each category has 3 ready-to-fill slots. Drive links are not used in this section.
     // ================================================================
     workBook: {
       films: [
-        { title: 'Films · Video 1', driveLink: 'https://drive.google.com/file/d/1i1OnDUzoaLApjtuq48FggQ0Ym0pj9BB0/view?usp=sharing', sampleSrc: tears, poster: tearsPoster }, // FILMS VIDEO 1 link yahan
-        { title: 'Films · Video 2', driveLink: 'https://drive.google.com/file/d/1iqJPSlDVsv5RYsAB20UoOckoudvC2bX1/view?usp=sharing', sampleSrc: escapes, poster: escapesPoster }, // FILMS VIDEO 2 link yahan
-        { title: 'Films · Video 3', driveLink: 'https://drive.google.com/file/d/1yI17RiJeBRfoVj6fvuO8BkceEd4SuYw8/view?usp=sharing', sampleSrc: fun, poster: funPoster } // FILMS VIDEO 3 link yahan
+        { title: 'Films · Video 1', driveLink: '', sampleSrc: '', poster: '' }, // Paste video URL + thumbnail path here.
+        { title: 'Films · Video 2', driveLink: '', sampleSrc: '', poster: '' },
+        { title: 'Films · Video 3', driveLink: '', sampleSrc: '', poster: '' }
       ],
       ads: [
-        { title: 'Ads · Video 1', driveLink: 'https://drive.google.com/file/d/1Xw-WOHbmK8ux9jH3m2l26e9-Txx6LOzj/view?usp=sharing', sampleSrc: escapes, poster: escapesPoster }, // ADS VIDEO 1 link yahan
-        { title: 'Ads · Video 2', driveLink: 'https://drive.google.com/file/d/1odd9rpIp2tsdUhgwOwJ8a19wrLwyM2cy/view?usp=sharing', sampleSrc: fun, poster: funPoster }, // ADS VIDEO 2 link yahan
-        { title: 'Ads · Video 3', driveLink: 'https://drive.google.com/file/d/1yzkPG9xLLGAdvt8lWghlG4WRjGiqCkwa/view?usp=sharing', sampleSrc: tears, poster: tearsPoster } // ADS VIDEO 3 link yahan
+        { title: 'Ads · Video 1', driveLink: '', sampleSrc: '', poster: '' }, // Paste video URL + thumbnail path here.
+        { title: 'Ads · Video 2', driveLink: '', sampleSrc: '', poster: '' },
+        { title: 'Ads · Video 3', driveLink: '', sampleSrc: '', poster: '' }
       ],
       social: [
-        { title: 'Social Media · Video 1', driveLink: 'https://drive.google.com/file/d/1WjkmOaf1udcEveSw_iLqCuN9Q1Hfutwb/view?usp=sharing', sampleSrc: fun, poster: funPoster }, // SOCIAL VIDEO 1 link yahan
-        { title: 'Social Media · Video 2', driveLink: 'https://drive.google.com/file/d/1-LNLJVYoli7Y6g7SBtpBc_3FGcjiqTSZ/view?usp=sharing', sampleSrc: tears, poster: tearsPoster }, // SOCIAL VIDEO 2 link yahan
-        { title: 'Social Media · Video 3', driveLink: 'https://drive.google.com/file/d/1nnWepuEJelG7iJTL58yfeNgMhi3cqq3M/view?usp=sharing', sampleSrc: escapes, poster: escapesPoster } // SOCIAL VIDEO 3 link yahan
+        { title: 'Social Media · Video 1', driveLink: '', sampleSrc: '', poster: '' }, // Paste video URL + thumbnail path here.
+        { title: 'Social Media · Video 2', driveLink: '', sampleSrc: '', poster: '' },
+        { title: 'Social Media · Video 3', driveLink: '', sampleSrc: '', poster: '' }
       ],
       production: [
-        { title: 'Production · Video 1', driveLink: 'https://drive.google.com/file/d/1thrGMPitz6LtqCGH0KPbKHAdywf7ASTl/view?usp=sharing', sampleSrc: tears, poster: tearsPoster }, // PRODUCTION VIDEO 1 link yahan
-        { title: 'Production · Video 2', driveLink: 'https://drive.google.com/file/d/191U7Tlauhs9hHPiMn4fyjOEPnv7iMobu/view?usp=sharing', sampleSrc: escapes, poster: escapesPoster }, // PRODUCTION VIDEO 2 link yahan
-        { title: 'Production · Video 3', driveLink: 'https://drive.google.com/file/d/1B9_yFmcrkf1y_M2oem3Lr95D4FI9u5Aa/view?usp=sharing', sampleSrc: fun, poster: funPoster } // PRODUCTION VIDEO 3 link yahan
+        { title: 'Production · Video 1', driveLink: '', sampleSrc: '', poster: '' }, // Paste video URL + thumbnail path here.
+        { title: 'Production · Video 2', driveLink: '', sampleSrc: '', poster: '' },
+        { title: 'Production · Video 3', driveLink: '', sampleSrc: '', poster: '' }
       ]
     },
 
     // ================================================================
-    // C · ASHEN PRESS FILM SHELF — all 10 volumes
+    // C · FILM SHELF — all 10 volumes
     // Har book ka Drive link alag hai. Film 02 ka link badalna ho to
     // sirf film-02 ke driveLink ko edit karo. Poster optional hai.
     // Poster apne folder me rakhkar relative path likho, jaise:
