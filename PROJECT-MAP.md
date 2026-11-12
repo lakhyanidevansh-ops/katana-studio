@@ -25,6 +25,7 @@ Edit **`katana-work-videos.js`**. This is the central config loaded by the landi
   - `driveLink` — leave blank; the sketchbook player uses the GitHub/API video URL in `sampleSrc`.
 - `filmShelf` — the ten film volumes: title, description, video source, poster, and credits.
 - `socialLinks` / `externalLinks` — social profile and other outbound URLs (see the matching section labels in the config file).
+- `links.contact` — WhatsApp, phone, and email destinations; `links.social` — Instagram, X, LinkedIn, and YouTube. These fill the landing and portfolio contact links.
 
 Example sketchbook slot:
 

@@ -106,6 +106,11 @@
     // Social profile destinations used by the studio footer.
     // ================================================================
     links: {
+      contact: {
+        whatsapp: { label: 'WhatsApp · +91 7486 084 751', url: 'https://wa.me/917486084751?text=Hi%20Katana%20Studios%2C%20I%27d%20like%20to%20discuss%20a%20project.' },
+        phone: { label: '+91 7486 084 751', url: 'tel:+917486084751' },
+        email: { label: 'sales.katanastudios@gmail.com', url: 'mailto:sales.katanastudios@gmail.com' }
+      },
       social: {
         instagram: { label: 'Katana Studios · Instagram', url: 'https://www.instagram.com/katanastudio.ads?rpxt=Z3VwODFibnhuMnVj' },
         x: { label: 'Katana Studios · X', url: 'https://x.com/KatanaStudt0' },
