@@ -52,31 +52,31 @@
 
     // ================================================================
     // B · SKETCHBOOK WORK VIDEOS
-    // GITHUB REPO PLAYER: paste each GitHub/API video URL into sampleSrc.
-    // Paste its thumbnail's relative path into poster (example: 'katana-portfolio/assets/thumbnails/cover.jpg').
+    // GITHUB REPO PLAYER: sampleSrc accepts a Release filename or full GitHub/API URL.
+    // A poster can be a thumbnail filename from katana-portfolio/assets/thumbnails/.
     // Video URL example: 'https://katana-studio-portfolio.vercel.app/api/video?file=your-video.mp4'
     // Each category has 3 ready-to-fill slots. Drive links are not used in this section.
     // ================================================================
     workBook: {
       films: [
-        { title: 'Films · Video 1', driveLink: '', sampleSrc: '', poster: '' }, // Paste video URL + thumbnail path here.
-        { title: 'Films · Video 2', driveLink: '', sampleSrc: '', poster: '' },
-        { title: 'Films · Video 3', driveLink: '', sampleSrc: '', poster: '' }
+        { title: 'Films · Video 1', driveLink: '', sampleSrc: 'Video-72566.mp4', poster: 'matinoz TVC.jpg' },
+        { title: 'Films · Video 2', driveLink: '', sampleSrc: 'vidssave.com Behaveneu AD 1080P.mp4', poster: 'BehaveNeu Brand video.jpg' },
+        { title: 'Films · Video 3', driveLink: '', sampleSrc: 'vidssave.com BNI commercial 720P.mp4', poster: 'BNI Brand shoot.jpg' }
       ],
       ads: [
-        { title: 'Ads · Video 1', driveLink: '', sampleSrc: '', poster: '' }, // Paste video URL + thumbnail path here.
-        { title: 'Ads · Video 2', driveLink: '', sampleSrc: '', poster: '' },
-        { title: 'Ads · Video 3', driveLink: '', sampleSrc: '', poster: '' }
+        { title: 'Ads · Video 1', driveLink: '', sampleSrc: 'Video-255.mp4', poster: 'Craftroots 01.jpg' },
+        { title: 'Ads · Video 2', driveLink: '', sampleSrc: 'Video-22081.mp4', poster: 'Craftroots 02.jpg' },
+        { title: 'Ads · Video 3', driveLink: '', sampleSrc: 'Video-78819.mp4', poster: 'Craftroots 03.jpg' }
       ],
       social: [
-        { title: 'Social Media · Video 1', driveLink: '', sampleSrc: '', poster: '' }, // Paste video URL + thumbnail path here.
-        { title: 'Social Media · Video 2', driveLink: '', sampleSrc: '', poster: '' },
-        { title: 'Social Media · Video 3', driveLink: '', sampleSrc: '', poster: '' }
+        { title: 'Social Media · Video 1', driveLink: '', sampleSrc: 'Video-13962.mp4', poster: 'Marketing Content 01.jpg' },
+        { title: 'Social Media · Video 2', driveLink: '', sampleSrc: 'Video-20696.mp4', poster: 'Marketing Content 02.jpg' },
+        { title: 'Social Media · Video 3', driveLink: '', sampleSrc: 'Video-21781.mp4', poster: 'Marketing Content 03.jpg' }
       ],
       production: [
-        { title: 'Production · Video 1', driveLink: '', sampleSrc: '', poster: '' }, // Paste video URL + thumbnail path here.
-        { title: 'Production · Video 2', driveLink: '', sampleSrc: '', poster: '' },
-        { title: 'Production · Video 3', driveLink: '', sampleSrc: '', poster: '' }
+        { title: 'Production · Video 1', driveLink: '', sampleSrc: 'f r sample.mp4', poster: 'Edit 01.jpg' },
+        { title: 'Production · Video 2', driveLink: '', sampleSrc: 'Halucinated Vinyl Crown Promo Work.mp4', poster: 'Edit 02.jpg' },
+        { title: 'Production · Video 3', driveLink: '', sampleSrc: 'portfo3.mp4', poster: 'Edit 03.jpg' }
       ]
     },
 
@@ -136,6 +136,25 @@
       }
     }
   };
+
+  // GitHub Release filenames go through the portfolio's API player; full URLs pass through.
+  const sketchbookVideoUrl = value => {
+    const source = String(value || '').trim();
+    if (!source || /^(https?:|blob:|data:|\/|\.\/|\.\.\/|assets\/)/i.test(source)) return source;
+    const filename = source.replace(/[()]/g, '').replace(/\s+/g, '.').replace(/\.{2,}/g, '.');
+    const url = new URL('https://katana-studio-portfolio.vercel.app/api/video');
+    url.searchParams.set('file', filename);
+    return url.href;
+  };
+  const sketchbookPosterPath = value => {
+    const poster = String(value || '').trim();
+    if (!poster || /^(https?:|data:|\/|\.\/|\.\.\/)/i.test(poster) || poster.includes('/')) return poster;
+    return `katana-portfolio/assets/thumbnails/${encodeURIComponent(poster)}`;
+  };
+  Object.values(window.KATANA_MEDIA.workBook).forEach(slots => slots.forEach(item => {
+    item.sampleSrc = sketchbookVideoUrl(item.sampleSrc);
+    item.poster = sketchbookPosterPath(item.poster);
+  }));
 
   // Website pages in values ko use karte hain. Neeche ke code ko edit mat karna.
   window.KATANA_WORK_VIDEOS = window.KATANA_MEDIA.workBook;
