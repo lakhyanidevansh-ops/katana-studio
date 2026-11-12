@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Katana Studios — Work Book</title>
 <meta name="description" content="Katana Studios work book: films, ads and commercials, social media, and production.">
+<link rel="canonical" href="https://www.katanastudios.in/work.html">
+<meta property="og:site_name" content="Katana Studios">
+<meta property="og:title" content="Katana Studios — Work Book">
+<meta property="og:description" content="Explore films, ads and commercials, social media, and production work by Katana Studios.">
+<meta property="og:url" content="https://www.katanastudios.in/work.html">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Zen+Old+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -629,7 +635,7 @@ function pageReels(i){
     media.dataset.videoSrc=item.sampleSrc||'';
     media.dataset.videoPoster=item.poster||'';
     media.dataset.videoTitle=item.title||page.title+' · Video '+String(index+1);
-    if(item.poster){const poster=el('img');poster.src=item.poster;poster.alt='';poster.loading='lazy';poster.decoding='async';media.append(poster)}
+    if(item.poster){const poster=el('img');poster.src=item.poster;poster.alt='';poster.width=640;poster.height=360;poster.loading='lazy';poster.decoding='async';media.append(poster)}
     const play=el('span','page-reel__play');play.setAttribute('aria-hidden','true');play.textContent='▶';media.append(play);
     if(!item.sampleSrc){const missing=el('span','page-reel__empty');missing.textContent='Add GitHub video URL';media.append(missing)}
     media.addEventListener('pointerdown',event=>event.stopPropagation());

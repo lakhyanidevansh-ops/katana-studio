@@ -103,6 +103,9 @@
         thumbnail.className = "poster-image";
         thumbnail.src = project.thumbnail;
         thumbnail.alt = "";
+        // Reserve the square card space before the lazy thumbnail arrives.
+        thumbnail.width = 640;
+        thumbnail.height = 640;
         thumbnail.loading = "lazy";
         thumbnail.decoding = "async";
         thumbnail.addEventListener("error", () => thumbnail.remove(), { once: true });

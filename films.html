@@ -2,6 +2,13 @@
 <meta charset="utf-8">
 <title>Katana Studios — Films</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Explore the Katana Studios film collection, including She Lived and selected film work.">
+<link rel="canonical" href="https://www.katanastudios.in/films.html">
+<meta property="og:site_name" content="Katana Studios">
+<meta property="og:title" content="Films — Katana Studios">
+<meta property="og:description" content="Explore the Katana Studios film collection and selected film work.">
+<meta property="og:url" content="https://www.katanastudios.in/films.html">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Zen+Old+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -264,7 +271,7 @@ body.mobile .detail{display:block;top:auto;bottom:86px;transform:none;width:100%
   <article class="film-spread">
     <section class="film-spread__cover-page" aria-label="Film poster preview">
       <p class="film-spread__folio" id="film-preview-meta"></p>
-      <div class="film-spread__media" id="film-preview-media"><img id="film-preview-cover" alt="Film poster preview"></div>
+      <div class="film-spread__media" id="film-preview-media"><img id="film-preview-cover" alt="Film poster preview" width="640" height="960"></div>
       <p class="film-spread__imprint">KATANA STUDIOS · FILM ARCHIVE</p>
     </section>
     <section class="film-spread__copy">
@@ -1462,6 +1469,8 @@ function openFilmPreview(B,playImmediately=false){
   filmPreviewMedia.classList.remove('is-playing');
   const cover=document.createElement('img');
   cover.alt=`${d.title} film cover`;
+  cover.width=640;
+  cover.height=960;
   cover.src=d.poster||paintCover(d,640,960).toDataURL('image/jpeg',.9);
   filmPreviewMedia.append(cover);
   const hasDrive=Boolean(window.KATANA_DRIVE?.fileId(d.driveLink||''));
