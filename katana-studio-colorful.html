@@ -2429,7 +2429,7 @@ const WANT_POST    = qs('post', '1') !== '0';
 const WANT_SHADOW  = qs('shadow', LOW ? '0' : '1') !== '0';
 /* Keep the large full-screen bloom scene within a sensible pixel budget on
    high-DPI displays. The governor below can raise/lower this further. */
-const DPR_CAP      = qn('dpr', LOW ? 1.05 : 1.25);
+const DPR_CAP = qn('dpr', LOW ? 1.05 : 1.1);
 /* the renderer trades resolution for frame rate on its own — the scene is
    fill-bound (five big alpha-blended veils plus a bloom chain), so pixels
    are the only knob worth turning on unknown hardware */
