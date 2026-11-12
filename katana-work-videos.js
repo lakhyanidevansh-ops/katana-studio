@@ -103,15 +103,14 @@
     // ================================================================
     // D · KATANA STUDIOS SOCIAL LINKS
     // Har url: '' ke beech apne profile ka poora link paste karo.
-    // NOTE: ye links abhi save honge; page par social buttons dikhane ke
-    // liye un buttons ko layout me add karna alag kaam hai.
+    // Social profile destinations used by the studio footer.
     // ================================================================
     links: {
       social: {
-        instagram: { label: 'Katana Studios · Instagram', url: '' }, // e.g. https://www.instagram.com/yourstudio/
-        x: { label: 'Katana Studios · X', url: '' }, // e.g. https://x.com/yourstudio
-        linkedin: { label: 'Katana Studios · LinkedIn', url: '' }, // e.g. https://www.linkedin.com/company/yourstudio/
-        youtube: { label: 'Katana Studios · YouTube', url: '' } // e.g. https://www.youtube.com/@yourstudio
+        instagram: { label: 'Katana Studios · Instagram', url: 'https://www.instagram.com/katanastudio.ads?rpxt=Z3VwODFibnhuMnVj' },
+        x: { label: 'Katana Studios · X', url: 'https://x.com/KatanaStudt0' },
+        linkedin: { label: 'Katana Studios · LinkedIn', url: 'https://www.linkedin.com/company/katana-studios/' },
+        youtube: { label: 'Katana Studios · YouTube', url: 'https://www.youtube.com/@Katanastudios-y6n' }
       },
 
       // E · SHE LIVED FILM CREDITS — ye profile links Films page par chalte hain.

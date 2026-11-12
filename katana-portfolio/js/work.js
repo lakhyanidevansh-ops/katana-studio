@@ -25,7 +25,7 @@ const videoEntries = (sources, thumbnails = [], titles = []) => sources.map((sou
 window.KATANA_WORK = {
   email: "sales.katanastudios@gmail.com",
   phone: "7486084751",
-  instagram: "https://www.instagram.com/katanastudio.ads?obrf=amhhZ3NrenA3ZWpw",
+  instagram: "https://www.instagram.com/katanastudio.ads?rpxt=Z3VwODFibnhuMnVj",
   categories: [
     {
       id: "ads",
